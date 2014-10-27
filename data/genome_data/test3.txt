@@ -1,0 +1,49 @@
+LOCUS       NC_009925            6503724 bp    DNA     circular CON 10-JUN-2013
+DEFINITION  Acaryochloris marina MBIC11017 chromosome, complete genome.
+ACCESSION   NC_009925
+VERSION     NC_009925.1  GI:158333233
+DBLINK      Project: 58167
+            BioProject: PRJNA58167
+KEYWORDS    RefSeq.
+SOURCE      Acaryochloris marina MBIC11017
+  ORGANISM  Acaryochloris marina MBIC11017
+            Bacteria; Cyanobacteria; Oscillatoriophycideae; Chroococcales;
+            Acaryochloris.
+REFERENCE   1  (bases 1 to 6503724)
+  AUTHORS   Swingley,W.D., Chen,M., Cheung,P.C., Conrad,A.L., Dejesa,L.C.,
+            Hao,J., Honchak,B.M., Karbach,L.E., Kurdoglu,A., Lahiri,S.,
+            Mastrian,S.D., Miyashita,H., Page,L., Ramakrishna,P., Satoh,S.,
+            Sattley,W.M., Shimada,Y., Taylor,H.L., Tomo,T., Tsuchiya,T.,
+            Wang,Z.T., Raymond,J., Mimuro,M., Blankenship,R.E. and
+            Touchman,J.W.
+  TITLE     Niche adaptation and genome expansion in the chlorophyll
+            d-producing cyanobacterium Acaryochloris marina
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 105 (6), 2005-2010 (2008)
+   PUBMED   18252824
+REFERENCE   2  (bases 1 to 6503724)
+  CONSRTM   NCBI Genome Project
+  TITLE     Direct Submission
+  JOURNAL   Submitted (17-OCT-2007) National Center for Biotechnology
+            Information, NIH, Bethesda, MD 20894, USA
+REFERENCE   3  (bases 1 to 6503724)
+  AUTHORS   Touchman,J.W.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (27-AUG-2007) Pharmaceutical Genomics Division,
+            Translational Genomics Research Institute, 13208 E Shea Blvd,
+            Scottsdale, AZ 85004, USA
+COMMENT     PROVISIONAL REFSEQ: This record has not yet been subject to final
+            NCBI review. The reference sequence was derived from CP000828.
+            Source bacteria from Marine Biotechnology Institute Culture
+            Collection, Marine Biotechnology Institute, 3-75-1 Heita, Kamaishi,
+            Iwate 026-0001, Japan.
+            COMPLETENESS: full length.
+FEATURES             Location/Qualifiers
+     source          1..6503724
+                     /organism="Acaryochloris marina MBIC11017"
+                     /mol_type="genomic DNA"
+                     /strain="MBIC11017"
+                     /db_xref="taxon:329726"
+                     /note="type strain of Acaryochloris marina"
+CONTIG      join(CP000828.1:1..6503724)
+//
+

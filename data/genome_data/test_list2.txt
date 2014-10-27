@@ -1,0 +1,2 @@
+Propionibacterium humerusii	1	Propionibacterium humerusii P08	NZ_AFAM00000000	AFAM00000000			Default			
+Propionibacterium propionicum	1	Propionibacterium propionicum F0230a	NC_018142	CP002734			Default			
