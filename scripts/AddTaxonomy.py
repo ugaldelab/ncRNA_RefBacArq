@@ -55,17 +55,18 @@ lineage_list = []
 
 for line in open(filename, 'r'):
     line = line.rstrip()
+
+    lineage_types = ['superkingdom', 'phylum', 'class', 'order',
+                     'family', 'genus', 'species']
+
     if line.startswith("Organism"):
-        print "Lineage" + "\t" + line
+        print "\t".join(lineage_types) + "\t" + line
         continue
 
     species = line.split("\t")[0]
 
     taxid = get_taxid(species)
     tax_lineage = get_lineage(taxid)
-
-    lineage_types = ['superkingdom', 'phylum', 'class', 'order',
-                     'family', 'genus', 'species']
 
     lineage_list = []
 
@@ -75,5 +76,5 @@ for line in open(filename, 'r'):
         else:
             lineage_list.append("unknown")
 
-    print ";".join(lineage_list) + "\t" + line
+    print "\t".join(lineage_list) + "\t" + line
     time.sleep(1)  # Wait between requests
