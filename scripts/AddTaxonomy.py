@@ -1,5 +1,7 @@
 import sys
 from Bio import Entrez
+import time
+from urllib2 import HTTPError
 
 
 def get_taxid(name):
@@ -8,7 +10,11 @@ def get_taxid(name):
     to get the full taxonomic lineage
     """
     name = name.replace(" ", "+").strip()
-    search = Entrez.esearch(term=name, db="taxonomy", retmode="xml")
+    try:
+        search = Entrez.esearch(term=name, db="taxonomy", retmode="xml")
+    except HTTPError:
+        time.sleep(20)
+        search = Entrez.esearch(term=name, db="taxonomy", retmode="xml")
     record = Entrez.read(search)
 
     return record['IdList'][0]
@@ -18,7 +24,11 @@ def get_lineage(id):
     """
     Use the tax ID to get the full lineage record
     """
-    search = Entrez.efetch(id=id, db="taxonomy", retmode="xml")
+    try:
+        search = Entrez.efetch(id=id, db="taxonomy", retmode="xml")
+    except HTTPError:
+        time.sleep(20)
+        search = Entrez.efetch(id=id, db="taxonomy", retmode="xml")
     record = Entrez.read(search)
 
     lineage = {d['Rank']: d['ScientificName'] for d in record[0]['LineageEx']}
@@ -39,6 +49,9 @@ if not Entrez.email:
     sys.exit(2)
 
 lineage_list = []
+
+#Because of the limit of Entrez, we will work
+#in batches
 
 for line in open(filename, 'r'):
     line = line.rstrip()
@@ -63,3 +76,4 @@ for line in open(filename, 'r'):
             lineage_list.append("unknown")
 
     print ";".join(lineage_list) + "\t" + line
+    time.sleep(1)  # Wait between requests
